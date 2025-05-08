@@ -77,4 +77,17 @@ public class Employee {
         }
         //tertiary operator- return(hoursWorked > 40) ? hoursWorked -40 : 0;
     }
+
+    //need to remember the punch in, so create a variable to put it.
+    private double punchInTime;
+
+
+    public void punchIn(double time){
+        this.punchInTime = time;
+    }
+
+    public void punchOut(double time){
+        this.hoursWorked += (time - this.punchInTime);
+    }
+
 }
