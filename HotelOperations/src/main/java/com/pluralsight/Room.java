@@ -9,23 +9,23 @@ public class Room {
     private boolean available;
 
 
-    public int getNumberOfBeds(){
-
+    public int getNumberOfBeds() {
+        return numberOfBeds;
     }
 
-    public double getPrice(){
-
+    public double getPrice() {
+        return price;
     }
 
-    public boolean isOccupied(){
-
+    public boolean isOccupied() {
+        return occupied;
     }
 
-    public boolean isDirty(){
-
+    public boolean isDirty() {
+        return dirty;
     }
 
-    public boolean isAvailable(){
-
+    public boolean isAvailable() {
+        return available;
     }
 }
