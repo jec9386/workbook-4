@@ -39,13 +39,15 @@ public class Main {
         //Fri
         e1.punchIn(8);
         e1.punchOut(17);
-        
+
         System.out.println(e1.getTotalPay());
 
 
 
         Employee e2 = new Employee(1, "Tom", "facilitator", 10);
-        e2.setHoursWorked(40); //this will be changed when you add punch in and punch out
+        e2.punchIn();
+        e2.punchOut(12);
+        System.out.println(e2.getHoursWorked());
         System.out.println(e2.getTotalPay());
 
         Employee e3 = new Employee(1, "William", "facilitator", 10);

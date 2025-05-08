@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Employee {
 
     private int employeeID;
@@ -86,8 +89,30 @@ public class Employee {
         this.punchInTime = time;
     }
 
-    public void punchOut(double time){
-        this.hoursWorked += (time - this.punchInTime);
+    public void punchIn(){
+        LocalDateTime dt = LocalDateTime.now();
+        double hours = dt.getHour();
+        double fractionOfHour = (double)dt.getMinute() / 60;
+        this.punchInTime = (hours + fractionOfHour);
+        //System.out.println("Punch in time at: " + this.punchInTime);
+    }
+
+
+    //user sets the time here
+    public void punchOut(double punchOutTime){
+        //System.out.println("Punch out time at: " + punchOutTime);
+        this.hoursWorked += (punchOutTime - this.punchInTime);
+
+    }
+
+    //derives from current time.
+    public void punchOut(){
+        LocalDateTime dt = LocalDateTime.now();
+        double hours = dt.getHour();
+        double fractionOfHour = (double)dt.getMinute() / 60;
+        double punchOutTime = hours + fractionOfHour;
+        this.hoursWorked += ( punchOutTime- this.punchInTime);
+        System.out.println("Punch out time at: " + punchOutTime);
     }
 
 }

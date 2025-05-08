@@ -33,7 +33,7 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return (!this.occupied) &&(!this.dirty);
+        return (!this.occupied) && (!this.dirty);
     }
 
     public void checkIn(){
